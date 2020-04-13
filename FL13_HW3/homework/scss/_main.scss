@@ -1,0 +1,310 @@
+@mixin buttons($color, $padding, $backgroundColor, $border, $fw) {
+    color: white;
+    background-color: $btnColors;
+    padding: 10px 25px 10px 25px;
+    border: none;
+    font-weight: 600;
+}
+
+@mixin linkHeader($marginLeft, $color) {
+    margin-left: 130px;
+    color: white;
+}
+
+@mixin linkCards($color) {
+    color: white;
+}
+
+
+$colors : (bodyBackground : $bodyBg);
+
+
+
+body {
+    margin: 0 auto;
+    font-family: $fontFamily;
+    background: map-get($colors, bodyBackground);
+    font-weight: normal;
+}
+
+.backgroundBefore {
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: '';
+        background: $marksColor;
+        position: absolute;
+        z-index: -1;
+    }
+}
+
+//header
+
+header {
+    background-image: $bgHeader;
+    background-size: cover;
+    background-position: center;
+    border-bottom-right-radius: 650px 250px;
+}
+
+.header-wrap {
+    padding-bottom: 100px;
+    width: 80%;
+    margin: 0 auto;
+
+}
+
+.header_heading {
+
+    @extend .backgroundBefore;
+
+    &:before {
+        bottom: 14px;
+        left: 0;
+        width: 336px;
+        height: 56px;
+    }
+}
+
+.landing-logo {
+
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+
+    img {
+        width: 55px;
+        height: 55px;
+    }
+
+    p {
+        display: flex;
+        flex-direction: column;
+        font-weight: bold;
+        align-items: center;
+        font-size: 30px;
+        margin: 0 0 0 15px;
+        padding-top: 10px;
+        line-height: 25px;
+        color: $LogoText;
+    }
+
+    span {
+        font-size: 13px;
+        line-height: 15px;
+    }
+}
+
+.header {
+
+    .header_heading {
+        font-size: 80px;
+        text-align: left;
+        line-height: 90px;
+        font-weight: 700;
+        color: $headerHeating;
+        width: 550px;
+        margin-bottom: 30px;
+        font-family: $ffamilyHeadings;
+    }
+
+    .header_text {
+        width: 75%;
+        font-size: 20px;
+        color: $headerDesc;
+        margin-bottom: 50px;
+        line-height: 30px;
+        white-space: pre-line;
+    }
+}
+
+div {
+    .header_button {
+        @include buttons(color, padding, backgroundColor, border, fw);
+
+    }
+
+    .login {
+        @include linkHeader(marginLeft, color);
+    }
+
+}
+
+//main
+
+main {
+    background-color: $mainBg;
+    text-align: center;
+
+    p.section_text {
+        font-size: 35px;
+        color: $sectionTextColor;
+        font-weight: 600;
+        display: inline-block;
+        font-family: $ffamilyHeadings;
+
+        @extend .backgroundBefore;
+
+        &::before {
+            top: 0;
+            width: 157px;
+            height: 38px;
+            right: 10px;
+
+        }
+    }
+
+    //cards
+
+    .section_card_wrap {
+
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap-reverse;
+
+        .section_card {
+            background-color: $cardBg;
+            text-align: left;
+            display: flex;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            padding: 5px;
+            width: 52%;
+
+            img[alt="experts"] {
+                width: 33%;
+            }
+
+            img[alt="content formats"] {
+                width: 32%;
+            }
+
+            img[alt="certificate"] {
+                width: 35%;
+            }
+
+            img {
+                padding: 15px;
+                border-radius: 10%;
+            }
+
+            .section_card_right_container {
+                display: flex;
+                flex-direction: column;
+                margin-left: auto;
+                margin-right: auto;
+                width: 55%;
+                color: rgb(211, 215, 223);
+
+                p.section_card_text {
+                    font-size: 16px;
+                    text-align: justify;
+                }
+
+
+                p:first-child {
+                    font-weight: 700;
+                    font-size: 25px;
+                    color: white;
+                    text-align: center;
+                    margin-bottom: 0;
+                    font-family: $ffamilyHeadings;
+                }
+
+                a {
+                    @include linkCards (color);
+                    text-align: center;
+                    color: rgb(211, 215, 223);
+                    padding-bottom: 20px;
+                }
+            }
+
+        }
+
+    }
+
+    .section_banner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        left: 50%;
+        top: 120px;
+        transform: translate(-50%, -50%);
+        padding: 5px 40px;
+        width: 60%;
+        border-radius: 8px;
+        background: $bannerBg;
+
+        .section_banner_text_wrap {
+            position: relative;
+            text-align: left;
+
+
+            p.section_banner_heading {
+                position: relative;
+                display: inline-block;
+                font-size: 30px;
+                font-weight: 700;
+                color: $bannerTitle;
+                margin-bottom: 0;
+                margin-top: 10px;
+                font-family: $ffamilyHeadings;
+
+                @extend .backgroundBefore;
+
+                &::before {
+                    bottom: 4px;
+                    width: 63px;
+                    height: 34px;
+                    left: 121px;
+                }
+            }
+
+            p.section_banner_text {
+                color: #acacac;
+                margin-bottom: 20px;
+                margin-top: 10px;
+            }
+        }
+
+        .section_banner_button {
+            @include buttons(color, padding, backgroundColor, border, fw);
+        }
+    }
+}
+
+footer {
+    background-color: $footerColor;
+    width: 100%;
+
+    .footer-wrap {
+        padding-top: 130px;
+        padding-bottom: 50px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: white;
+
+        .footer_logo {
+            padding-top: 0;
+        }
+
+        p {
+            color: $footerText;
+        }
+
+        .footer_text {
+            width: 358px;
+            color: $footerText;
+
+        }
+
+        .footer-cr {
+            color: #d3d7df;
+        }
+
+    }
+}
