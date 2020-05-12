@@ -1,0 +1,45 @@
+body {
+  font-size: 14px;
+  font-family: 'Times New Roman', Times, serif;
+}
+.tree ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+.tree ul ul {
+  padding: 0.3rem 0 0 1rem;
+}
+.tree ul li {
+  margin-bottom: 0.2rem;
+}
+.tree .close > ul,
+.tree .close > .placeholder {
+  display: none;
+}
+.tree .tree-title {
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 0.1rem;
+}
+.tree .tree-title:hover {
+  background-color: #efefef;
+}
+.tree .folder {
+  color: #edbc0b;
+  cursor: pointer;
+  font-size: 1.1rem;
+  float: left;
+  margin-right: 0.2rem;
+}
+.tree .insert_drive_file {
+  color: lightgrey;
+  font-size: 1.1rem;
+  float: left;
+  margin-right: 0.2rem;
+}
+.tree .placeholder {
+  font-size: 1.1rem;
+  font-style: italic;
+  padding-left: 0.5rem;
+}
