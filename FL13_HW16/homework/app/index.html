@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="./styles/index.css">
+  <title>UserList</title>
+</head>
+
+<body>
+  <h1>Manage user App</h1>
+
+  <div class="wrapper">
+    <div id="data" class="hide">
+      <form id="form">
+        <input autocomplete="off" id="user_name" type="text" placeholder="Name">
+        <input autocomplete="off" id="full_name" type="text" placeholder="Full Name">
+        <button id="add-user" type="button" onclick="addUser()">Add New User</button>
+      </form>
+
+      <br />
+
+      <table id="table">
+        <thead>
+          <tr>
+            <th>User's Id</th>
+            <th>Name</th>
+            <th>Username</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+    <div id="loader" class="lds-roller">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+  <script src="./js/index.js"></script>
+
+</body>
+
+</html>
